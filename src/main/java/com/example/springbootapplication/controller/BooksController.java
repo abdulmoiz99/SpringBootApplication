@@ -24,6 +24,34 @@ public class BooksController {
     public ResponseEntity<List<Books>> getBooks() {
         return new ResponseEntity<>(books, HttpStatus.OK);
     }
+
+    @GetMapping(produces = "application/cs.miu.edu-v2+json")
+    public ResponseEntity<List<Books>> getBooksV2() {
+        List<Books> limitedBooks = books.size() > 2 ? books.subList(0, 2) : books;
+        return new ResponseEntity<>(limitedBooks, HttpStatus.OK);
+    }
+    @GetMapping(value = "", headers = "X-API-VERSION=3")
+    public ResponseEntity<List<Books>> getBooksV3() {
+        List<Books> limitedBooks = books.size() > 3 ? books.subList(0, 3) : books;
+        return new ResponseEntity<>(limitedBooks, HttpStatus.OK);
+    }
+
+    @GetMapping("/v4")
+    public ResponseEntity<List<Books>> getBooksV4() {
+        List<Books> limitedBooks = books.size() > 4 ? books.subList(0, 4) : books;
+        return new ResponseEntity<>(limitedBooks, HttpStatus.OK);
+    }
+    @GetMapping("/v5")
+    public ResponseEntity<List<Books>>getBooksV5(@RequestParam int version) {
+        if(version == 5){
+            List<Books> limitedBooks = books.size() > 5 ? books.subList(0, 5) : books;
+            return new ResponseEntity<>(limitedBooks, HttpStatus.OK);
+        }
+        else {
+            return new ResponseEntity<>(null, HttpStatus.OK);
+        }
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Books> getBooksById(@PathVariable int id) {
         Books bookToReturn = null;

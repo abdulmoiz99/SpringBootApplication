@@ -68,7 +68,22 @@ GET http://localhost:8080/books
 content-type: application/json
 
 ###
-GET http://localhost:8080/books/2
+GET http://localhost:8080/books
+Accept: application/cs.miu.edu-v2+json
+
+###
+GET http://localhost:8080/books
+X-API-VERSION: 3
+
+###
+GET http://localhost:8080/books/v4
+
+###
+GET http://localhost:8080/books/v4
+
+###
+###
+GET http://localhost:8080/books/v5?version=5
 content-type: application/json
 
 ###
