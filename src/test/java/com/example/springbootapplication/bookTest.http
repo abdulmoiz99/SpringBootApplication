@@ -1,0 +1,72 @@
+POST http://localhost:8080/books
+Content-Type: application/json
+
+[
+  {
+    "title": "Atomic Habits",
+    "isbn": "978-0735211292",
+    "price": 100.0
+  },
+  {
+    "title": "The Power of Habit",
+    "isbn": "978-0812979680",
+    "price": 150.0
+  },
+  {
+    "title": "Thinking, Fast and Slow",
+    "isbn": "978-0374533557",
+    "price": 200.0
+  },
+  {
+    "title": "Educated",
+    "isbn": "978-0399590504",
+    "price": 175.0
+  },
+  {
+    "title": "Sapiens: A Brief History of Humankind",
+    "isbn": "978-0062316097",
+    "price": 180.0
+  },
+  {
+    "title": "The Lean Startup",
+    "isbn": "978-0307887894",
+    "price": 120.0
+  },
+  {
+    "title": "Good to Great",
+    "isbn": "978-0066620990",
+    "price": 140.0
+  },
+  {
+    "title": "The 7 Habits of Highly Effective People",
+    "isbn": "978-0743269513",
+    "price": 160.0
+  },
+  {
+    "title": "Grit: The Power of Passion and Perseverance",
+    "isbn": "978-1501111105",
+    "price": 130.0
+  },
+  {
+    "title": "Deep Work: Rules for Focused Success in a Distracted World",
+    "isbn": "978-1455586691",
+    "price": 170.0
+  }
+]
+###
+GET http://localhost:8080/books
+content-type: application/json
+
+###
+PUT http://localhost:8080/books/2
+content-type: application/json
+
+{
+  "title": "The Power of Habit has been updated",
+  "isbn": "978-0812979680-updated",
+  "price": 160.0
+}
+
+###
+DELETE http://localhost:8080/books/3
+content-type: application/json
