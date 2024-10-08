@@ -2,7 +2,7 @@ POST localhost:8080/books
 Content-Type: application/json
 
 {
-  "id": 2,
+  "id": 1,
   "title": "Atomic Habbits",
   "isbn": "1231A123",
   "price": 100.54

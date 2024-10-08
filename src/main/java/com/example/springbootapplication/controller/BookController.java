@@ -25,4 +25,14 @@ public class BookController {
         return new ResponseEntity<>(books, HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Book> getSpecificBook(@PathVariable int id){
+        Book book = books.stream()
+                .filter(b -> b.getId() == id)
+                .findAny()
+                .orElse(null);
+
+        return new ResponseEntity<>(book, HttpStatus.OK);
+    }
+
 }
