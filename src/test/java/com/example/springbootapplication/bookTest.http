@@ -1,0 +1,15 @@
+POST localhost:8080/books
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Atomic Habbits",
+  "isbn": "1231A123",
+  "price": 100.54
+}
+
+###
+GET localhost:8080/books
+
+###
+GET localhost:8080/books/1
