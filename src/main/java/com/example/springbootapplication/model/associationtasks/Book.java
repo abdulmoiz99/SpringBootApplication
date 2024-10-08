@@ -5,7 +5,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToOne;
 
-@Entity
 public class Book {
     @Id
     private int id;
