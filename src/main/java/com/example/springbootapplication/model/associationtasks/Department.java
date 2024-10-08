@@ -6,7 +6,7 @@ import jakarta.persistence.OneToMany;
 
 import java.util.List;
 
-@Entity
+//@Entity
 public class Department {
     @Id
     private int id;
