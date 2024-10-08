@@ -20,5 +20,9 @@ public class BookController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-  
+    @GetMapping()
+    public ResponseEntity<List<Book>> getBooks() {
+        return new ResponseEntity<>(books, HttpStatus.OK);
+    }
+
 }
