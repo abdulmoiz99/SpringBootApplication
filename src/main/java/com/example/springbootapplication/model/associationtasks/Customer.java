@@ -2,17 +2,18 @@ package com.example.springbootapplication.model.associationtasks;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 import java.util.List;
 
-public class Course {
+@Entity
+public class Customer {
     @Id
     private int id;
     private String name;
-    private String description;
-    private String location;
+    private String address;
+    private String phone;
 
-    @ManyToMany(mappedBy = "courses")
-    private List<Student> students;
+    @OneToMany
+    private List<Reservation> reservations;
 }
