@@ -3,17 +3,13 @@ package com.example.springbootapplication.model.associationtasks;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-
-import java.util.List;
+import jakarta.persistence.OneToOne;
 
 @Entity
-public class Customer {
+public class Author {
     @Id
     private int id;
-    private String name;
-    private String address;
-    private String phone;
+    private String firstName;
+    private String lastName;
 
-    @OneToMany
-    private List<Reservation> reservations;
 }
