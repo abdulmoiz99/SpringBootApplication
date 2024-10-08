@@ -35,4 +35,22 @@ public class BookController {
         return new ResponseEntity<>(book, HttpStatus.OK);
     }
 
+    @PostMapping("/{id}")
+    public ResponseEntity<Void> updateBook(@PathVariable int id,  @RequestBody Book book) {
+        Book bookToUpdate = books.stream()
+                .filter(b -> b.getId() == id)
+                .findFirst()
+                .orElse(null);
+
+        if(bookToUpdate != null) {
+            bookToUpdate.setId(book.getId());
+            bookToUpdate.setTitle(book.getTitle());
+            bookToUpdate.setIsbn(book.getIsbn());
+            bookToUpdate.setPrice(book.getPrice());
+
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
 }

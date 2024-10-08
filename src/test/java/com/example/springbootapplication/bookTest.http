@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
   "id": 1,
-  "title": "Atomic Habbits",
+  "title": "Atomic Habits",
   "isbn": "1231A123",
   "price": 100.54
 }
@@ -13,3 +13,14 @@ GET localhost:8080/books
 
 ###
 GET localhost:8080/books/1
+
+###
+POST localhost:8080/books/2
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": "Atomic Habits 2",
+  "isbn": "1231A123--",
+  "price": 10
+}
