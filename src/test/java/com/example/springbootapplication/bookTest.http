@@ -24,3 +24,7 @@ Content-Type: application/json
   "isbn": "1231A123--",
   "price": 10
 }
+
+###
+
+DELETE  localhost:8080/books/1

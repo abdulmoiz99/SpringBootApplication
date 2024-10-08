@@ -53,4 +53,17 @@ public class BookController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteBook(@PathVariable int id) {
+        Book bookToDelete = books.stream()
+                .filter(book -> book.getId() == id)
+                .findFirst()
+                .orElse(null);
+
+        if(bookToDelete != null) {
+            books.remove(bookToDelete);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        else return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 }
